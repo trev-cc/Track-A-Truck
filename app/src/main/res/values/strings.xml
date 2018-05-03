@@ -7,4 +7,7 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_maps2">Map</string>
+    <string name="TitleApp">Track-A-Truck</string>
+    <string name="NamesApp">Christian Loya and Trevor Fleeman</string>
+
 </resources>

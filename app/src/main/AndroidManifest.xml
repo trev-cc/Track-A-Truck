@@ -41,6 +41,10 @@
             android:label="@string/title_activity_maps2">
 
         </activity>
+
+        <activity android:name=".UserActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnCreateDriver" type="id" />
+    <item name="driver_recycler_view" type="id" />
+    <item name="show_subtitle" type="id" />
+    <item name="new_driver" type="id" />
+    <item name="driver_fname" type="id" />
+    <item name="driver_lname" type="id" />
+    <item name="driver_position" type="id" />
+    <item name="driver_phone" type="id" />
+    <item name="driver_email" type="id" />
+    <item name="driver_address" type="id" />
+</resources>
