@@ -10,6 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 private Button b;
 private Button b2;
+private Button b3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +30,13 @@ private Button b2;
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,UserActivity.class);
+                Intent i = new Intent(MainActivity.this,UserListActivity.class);
                 startActivity(i);
             }
 
         });
     }
 
-    }
+}
 
 

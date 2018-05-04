@@ -38,7 +38,6 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
         LatLng dallas = new LatLng(32.7767, -96.7970);
         mMap.addMarker(new MarkerOptions().position(dallas).title("Trevor Fleeman; Dallas,Tx"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(dallas));
