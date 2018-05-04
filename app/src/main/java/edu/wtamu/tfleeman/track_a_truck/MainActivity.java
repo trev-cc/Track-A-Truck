@@ -35,6 +35,16 @@ private Button b3;
             }
 
         });
+
+        b3 = (Button) findViewById(R.id.button3);
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,WeatherActivity.class);
+                startActivity(i);
+            }
+
+        });
     }
 
 }
