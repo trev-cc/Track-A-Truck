@@ -16,20 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Driver Position"/>
-    <TextView
-        android:id="@+id/user_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Driver Phone"/>
+
     <TextView
         android:id="@+id/user_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Driver Email"/>
-    <TextView
-        android:id="@+id/user_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Driver Address"/>
+
 
 </LinearLayout>

@@ -39,13 +39,9 @@ public class User {
         mPosition = position;
     }
 
-    public String getPhone() {
-        return mPhone;
-    }
+    //public String getPhone() { return mPhone; }
 
-    public void setPhone(String phone) {
-        mPhone = phone;
-    }
+    //public void setPhone(String phone) {mPhone = phone; }
 
     public String getEmail() {
         return mEmail;
@@ -55,11 +51,7 @@ public class User {
         mEmail = email;
     }
 
-    public String getAddress() {
-        return mAddress;
-    }
+    //public String getAddress() { return mAddress; }
 
-    public void setAddress(String address) {
-        mAddress = address;
-    }
+    //public void setAddress(String address) { mAddress = address;}
 }

@@ -20,6 +20,8 @@ public class UserFragment extends Fragment{
 
     private User mUser;
     private EditText mNameField;
+    private EditText mPositionField;
+    private EditText mEmailField;
 
     public static UserFragment newInstance(UUID userId){
         Bundle args = new Bundle();
@@ -54,6 +56,44 @@ public class UserFragment extends Fragment{
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mUser.setName(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        mPositionField = (EditText) v.findViewById(R.id.user_position);
+        mPositionField.setText(mUser.getPosition());
+        mPositionField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mUser.setPosition(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        mEmailField = (EditText) v.findViewById(R.id.user_email);
+        mEmailField.setText(mUser.getEmail());
+        mEmailField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mUser.setEmail(s.toString());
             }
 
             @Override

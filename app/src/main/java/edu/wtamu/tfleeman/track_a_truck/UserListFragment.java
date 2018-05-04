@@ -24,7 +24,7 @@ public class UserListFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_user_list, container, false);
 
         mUserRecyclerView = (RecyclerView) view
-                .findViewById(R.id.crime_recycler_view);
+                .findViewById(R.id.user_recycler_view);
         mUserRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         updateUI();
@@ -58,29 +58,24 @@ public class UserListFragment extends Fragment{
         private User mUser;
 
         private TextView mNameTextView;
-        /*private TextView mPositionTextView;
-        private TextView mPhoneTextView;
+        private TextView mPositionTextView;
         private TextView mEmailTextView;
-        private TextView mAddressTextView;*/
 
         public UserHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_user, parent, false));
             itemView.setOnClickListener(this);
 
             mNameTextView = (TextView) itemView.findViewById(R.id.user_name);
-            /*mPositionTextView = (TextView) itemView.findViewById(R.id.user_position);
-            mPhoneTextView = (TextView) itemView.findViewById(R.id.user_phone);
+            mPositionTextView = (TextView) itemView.findViewById(R.id.user_position);
             mEmailTextView = (TextView) itemView.findViewById(R.id.user_email);
-            mAddressTextView = (TextView) itemView.findViewById(R.id.user_address);*/
+
         }
 
         public void bind(User user) {
             mUser = user;
             mNameTextView.setText(mUser.getName());
-            /*mPositionTextView.setText(mUser.getPosition());
-            mPhoneTextView.setText(mUser.getPhone());
+            mPositionTextView.setText(mUser.getPosition());
             mEmailTextView.setText(mUser.getEmail());
-            mAddressTextView.setText(mUser.getAddress());*/
         }
 
         @Override

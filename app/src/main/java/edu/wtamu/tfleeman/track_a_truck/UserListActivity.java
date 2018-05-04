@@ -9,6 +9,5 @@ public class UserListActivity extends SingleFragmentActivity {
         return new UserListFragment();
 
 
-
     }
 }
