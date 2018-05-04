@@ -1,15 +1,20 @@
 package edu.wtamu.tfleeman.track_a_truck;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import edu.wtamu.tfleeman.track_a_truck.database.UserBaseHelper;
+
 public class UserLab {
     private static UserLab sUserLab;
 
     private List<User> mUsers;
+    //private Context mContext;
+    //private SQLiteDatabase mDatabase;
 
     public static UserLab get(Context context){
         if (sUserLab == null){
@@ -19,17 +24,16 @@ public class UserLab {
     }
 
     private UserLab(Context context){
+        //mContext = context.getApplicationContext();
+        //mDatabase = new UserBaseHelper(mContext)
+                //.getWritableDatabase();
         mUsers = new ArrayList<>();
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
             User user = new User();
             user.setName("Driver #" + i);
-            user.setPosition("Location" + i);
-            user.setPhone("555-555-5555");
-            user.setEmail("driveremail@trackatruck.com");
-            user.setAddress(i + "Main St.");
             mUsers.add(user);
         }
-    }
+        }
 
     public List<User> getUsers(){
         return mUsers;

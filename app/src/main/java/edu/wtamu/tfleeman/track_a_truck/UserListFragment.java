@@ -32,12 +32,24 @@ public class UserListFragment extends Fragment{
         return view;
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateUI();
+    }
+
+
+
     private void updateUI(){
         UserLab userlab = UserLab.get(getActivity());
         List<User> users = userlab.getUsers();
 
-        mAdapter = new UserAdapter(users);
-        mUserRecyclerView.setAdapter(mAdapter);
+        if (mAdapter == null){
+            mAdapter = new UserAdapter(users);
+            mUserRecyclerView.setAdapter(mAdapter);
+        }else{
+            mAdapter.notifyDataSetChanged();
+        }
     }
 
     private class UserHolder extends RecyclerView.ViewHolder
@@ -73,8 +85,8 @@ public class UserListFragment extends Fragment{
 
         @Override
         public void onClick(View view) {
-            Toast.makeText(getActivity(), mUser.getName() + "clicked!", Toast.LENGTH_SHORT)
-                    .show();
+            Intent intent = UserPagerActivity.newIntent(getActivity(), mUser.getId());
+            startActivity(intent);
         }
     }
 

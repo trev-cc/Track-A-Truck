@@ -16,14 +16,27 @@ import java.util.UUID;
 
 public class UserFragment extends Fragment{
 
+    private static final String ARG_USER_ID = "user_id";
+
     private User mUser;
     private EditText mNameField;
+
+    public static UserFragment newInstance(UUID userId){
+        Bundle args = new Bundle();
+        args.putSerializable(ARG_USER_ID, userId);
+
+        UserFragment fragment = new UserFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mUser = new User();
+        UUID userId = (UUID) getArguments().getSerializable(ARG_USER_ID);
+        mUser = UserLab.get(getActivity()).getUser(userId);
     }
 
     @Override
