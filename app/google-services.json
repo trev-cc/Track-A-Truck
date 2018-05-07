@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "954523994082",
+    "firebase_url": "https://track-a-truck-1f612.firebaseio.com",
+    "project_id": "track-a-truck-1f612",
+    "storage_bucket": "track-a-truck-1f612.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954523994082:android:6a46a360ff09ca00",
+        "android_client_info": {
+          "package_name": "edu.wtamu.tfleeman.track_a_truck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954523994082-347inf7o81vaat67em09jkjgbrveusgh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.wtamu.tfleeman.track_a_truck",
+            "certificate_hash": "a9c9ef0e1ba832707ed30020a921719fbc6bf7a6"
+          }
+        },
+        {
+          "client_id": "954523994082-90sa4nu2rdt7v80tou1m6ajtlr7k92pq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ00nq19Ue9P2PWcV-y6HzrSVwYJzJfMs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954523994082-90sa4nu2rdt7v80tou1m6ajtlr7k92pq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

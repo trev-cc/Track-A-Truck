@@ -18,5 +18,11 @@
     <string name="user_position">Position</string>
     <string name="user_position_hint">Enter the position of the Driver.</string>
     <string name="user_detail">Details</string>
+    <string name="user_picker_tilte">Name of Driver</string>
+    <string name="new_user">New Driver</string>
+    <string name="show_position">Show Position</string>
+    <string name="hide_position">Hide Position</string>
+    <string name="subtitle_format">%1$d crimes</string>
+
 
 </resources>

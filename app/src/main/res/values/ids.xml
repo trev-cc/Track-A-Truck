@@ -10,4 +10,5 @@
     <item name="driver_phone" type="id" />
     <item name="driver_email" type="id" />
     <item name="driver_address" type="id" />
+    <item name="city_field" type="id" />
 </resources>

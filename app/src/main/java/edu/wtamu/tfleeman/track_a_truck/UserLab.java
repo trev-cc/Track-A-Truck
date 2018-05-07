@@ -28,12 +28,11 @@ public class UserLab {
         //mDatabase = new UserBaseHelper(mContext)
                 //.getWritableDatabase();
         mUsers = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            User user = new User();
-            user.setName("Driver #" + i);
-            mUsers.add(user);
-        }
-        }
+    }
+
+    public void addUser(User c){
+        mUsers.add(c);
+    }
 
     public List<User> getUsers(){
         return mUsers;

@@ -42,7 +42,9 @@
             android:name=".MapsActivity2"
             android:label="@string/title_activity_maps2"></activity>
         <activity android:name=".UserListActivity"></activity>
-        <activity android:name=".UserPagerActivity"></activity>
+        <activity android:name=".UserPagerActivity"
+                  android:parentActivityName=".UserListActivity">
+        </activity>
         <activity android:name=".WeatherActivity"></activity>
     </application>
 

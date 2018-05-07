@@ -3,9 +3,13 @@ package edu.wtamu.tfleeman.track_a_truck;
         import android.support.v4.app.Fragment;
         import android.content.Intent;
         import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
         import android.support.v7.widget.LinearLayoutManager;
         import android.support.v7.widget.RecyclerView;
         import android.view.LayoutInflater;
+        import android.view.Menu;
+        import android.view.MenuInflater;
+        import android.view.MenuItem;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.TextView;
@@ -15,8 +19,17 @@ package edu.wtamu.tfleeman.track_a_truck;
 
 public class UserListFragment extends Fragment{
 
+    private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
+
     private RecyclerView mUserRecyclerView;
     private UserAdapter mAdapter;
+    private boolean mSubtitleVisible;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,6 +40,10 @@ public class UserListFragment extends Fragment{
                 .findViewById(R.id.user_recycler_view);
         mUserRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        if (savedInstanceState != null) {
+            mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
+        }
+
         updateUI();
 
         return view;
@@ -36,6 +53,58 @@ public class UserListFragment extends Fragment{
     public void onResume(){
         super.onResume();
         updateUI();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(SAVED_SUBTITLE_VISIBLE, mSubtitleVisible);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_user_list, menu);
+
+        MenuItem subtitleItem = menu.findItem(R.id.show_position);
+        if (mSubtitleVisible){
+            subtitleItem.setTitle(R.string.hide_position);
+            }else{
+            subtitleItem.setTitle(R.string.show_position);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.new_user:
+                User user = new User();
+                UserLab.get(getActivity()).addUser(user);
+                Intent intent = UserPagerActivity
+                        .newIntent(getActivity(), user.getId());
+                startActivity(intent);
+                return true;
+            case R.id.show_position:
+                mSubtitleVisible = !mSubtitleVisible;
+                getActivity().invalidateOptionsMenu();
+                updateSubtitle();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void updateSubtitle(){
+        UserLab userLab = UserLab.get(getActivity());
+        int userCount = userLab.getUsers().size();
+        String subtitle = getString(R.string.subtitle_format, userCount);
+
+        if (!mSubtitleVisible){
+            subtitle = null;
+        }
+
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        activity.getSupportActionBar().setSubtitle(subtitle);
     }
 
 
@@ -50,6 +119,8 @@ public class UserListFragment extends Fragment{
         }else{
             mAdapter.notifyDataSetChanged();
         }
+
+        updateSubtitle();
     }
 
     private class UserHolder extends RecyclerView.ViewHolder
